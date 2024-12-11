@@ -24,7 +24,11 @@ function App() {
         console.log(error);
       }
     };
-  }, []);
+
+    if (permissionGranted === null) {
+      requestCameraPermission();
+    }
+  }, [permissionGranted, videoStream]);
   return (
     <div className="max-w-xl w-full mx-auto">
       <h1 className="text-xl font-bold text-red-500 text-center py-4 border-b border-gray-300">
