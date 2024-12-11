@@ -7,14 +7,19 @@ function App() {
       <h1 className="text-xl font-bold text-red-500 text-center py-4 border-b border-gray-300">
         hello world
       </h1>
-      <div>
+      <div className="relative w-full h-[400px]">
         <video
-          className="w-full h-[400px] bg-red-500"
+          className="absolute w-full h-full"
           id="videoElement"
           ref={videoRef}
           autoPlay
           playsInline
         ></video>
+        <canvas
+          id="canvasElement"
+          ref={canvasRef}
+          className="absolute w-full h-full"
+        ></canvas>
       </div>
     </div>
   );
