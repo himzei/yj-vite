@@ -38,11 +38,11 @@ function App() {
           autoPlay
           playsInline
         ></video>
-        {/* <canvas
+        <canvas
           id="canvasElement"
           ref={canvasRef}
           className="absolute w-full h-full border-2 rounded"
-        ></canvas> */}
+        ></canvas>
       </div>
     </div>
   );
