@@ -28,6 +28,14 @@ function App() {
     if (permissionGranted === null) {
       requestCameraPermission();
     }
+
+    return () => {
+      if (videoStream) {
+        videoStream.getTracks().forEach((track) => {
+          track.stop();
+        });
+      }
+    };
   }, [permissionGranted, videoStream]);
   return (
     <div className="max-w-xl w-full mx-auto">
