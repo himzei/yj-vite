@@ -15,11 +15,17 @@ function App() {
     const requestCameraPermission = async () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
-          video: true,
+          video: {
+            facingMode: "envirionment",
+          },
         });
         console.log(stream);
         setPermissionGranged(true);
         setVideoStream;
+
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+        }
       } catch (error) {
         console.log(error);
       }
